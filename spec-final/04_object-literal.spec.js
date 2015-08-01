@@ -1,4 +1,4 @@
-jest.autoMockOff();
+var expect = require('expect.js');
 
 
 describe('Object Literal', () => {
@@ -21,9 +21,9 @@ describe('Object Literal', () => {
     var godzilla = createMonster("Godzilla", 1000);
     var mechaGodzilla = createMonster("MechaGodzilla", 5000);
 
-    expect(godzilla.name).toBe("Godzilla");
-    expect(godzilla.power).toBe(1000);
-    expect(godzilla.attack(mechaGodzilla)).toBe('Godzilla attacked MechaGodzilla');
+    expect(godzilla.name).to.be("Godzilla");
+    expect(godzilla.power).to.be(1000);
+    expect(godzilla.attack(mechaGodzilla)).to.be('Godzilla attacked MechaGodzilla');
   });
 
 

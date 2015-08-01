@@ -1,19 +1,19 @@
 //WRITE YOUR IMPORT STATEMENTS HERE
 import Mathy from '../common/Mathy';
 import myMathy from '../common/Mathy';
-import _ from 'lodash';
+import mocha from 'mocha';
 import {sqrt as mySqrt, square as mySquare} from '../common/Mathy';
 
 
-jest.autoMockOff();
+var expect = require('expect.js');
 
 describe('ES6 Modules', () => {
   it('can import Mathy', () => {
 
     //I DID THIS ONE FOR YOU!
-    expect(Mathy.sqrt).toBeDefined();
-    expect(Mathy.square).toBeDefined();
-    expect(Mathy.diag).toBeDefined();
+    expect(Mathy.sqrt).not.to.be(undefined);
+    expect(Mathy.square).not.to.be(undefined);
+    expect(Mathy.diag).not.to.be(undefined);
   });
 
 
@@ -21,27 +21,27 @@ describe('ES6 Modules', () => {
 
     //Import `Mathy as myMathy` to ge these tests to pass.
 
-    expect(myMathy).toBeDefined();
-    expect(myMathy.sqrt).toEqual(Mathy.sqrt);
-    expect(myMathy.square).toEqual(Mathy.square);
-    expect(myMathy.diag).toEqual(Mathy.diag);
+    expect(myMathy).not.to.be(undefined);
+    expect(myMathy.sqrt).to.be(Mathy.sqrt);
+    expect(myMathy.square).to.be(Mathy.square);
+    expect(myMathy.diag).to.be(Mathy.diag);
   });
 
   it('can destructure the import, to only retain pieces of the import', () => {
 
     //Import `Mathy` again, but pull out only the `sqrt` as mySqrt, and `square` as mySquare
 
-    expect(mySqrt).toBeDefined();
-    expect(mySquare).toBeDefined();
-    expect(mySqrt).toEqual(Mathy.sqrt);
-    expect(mySquare).toEqual(Mathy.square);
+    expect(mySqrt).not.to.be(undefined);
+    expect(mySquare).not.to.be(undefined);
+    expect(mySqrt).to.be(Mathy.sqrt);
+    expect(mySquare).to.be(Mathy.square);
   });
 
   it('can import from my node_modules', () => {
 
-    //import `lodash`
+    //import `mocha`
 
-    expect(_).toBeDefined();
+    expect(mocha).not.to.be(undefined);
 
   });
 });

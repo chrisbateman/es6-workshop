@@ -1,4 +1,4 @@
-jest.autoMockOff();
+var expect = require('expect.js');
 
 describe('MAPS', () => {
 
@@ -7,7 +7,7 @@ describe('MAPS', () => {
     let myMap = new Map();
     myMap.set('name', 'Aaron');
 
-    expect(myMap.get("name")).toBe("Aaron");
+    expect(myMap.get("name")).to.be("Aaron");
 
   });
 
@@ -19,8 +19,8 @@ describe('MAPS', () => {
     let myMap = new Map();
     myMap.set(user, value);
 
-    expect(myMap.has(user)).toBe(true);
-    expect(myMap.get(user)).toBe(value);
+    expect(myMap.has(user)).to.be(true);
+    expect(myMap.get(user)).to.be(value);
 
   });
 
@@ -29,9 +29,9 @@ describe('MAPS', () => {
   //
   //  let myMap = new Map();
   //  myMap.set(1, 'Aaron');
-  //  expect(myMap.get('1')).toBe(false);
+  //  expect(myMap.get('1')).to.be(false);
   //  myMap.set("1", 'Aaron');
-  //  expect(myMap.get('1')).toBe(true);
+  //  expect(myMap.get('1')).to.be(true);
   //
   //});
 

@@ -1,4 +1,4 @@
-jest.autoMockOff();
+var expect = require('expect.js');
 
 describe('Default Values', () => {
   it('can be triggered when the incoming argument is undefined', () => {
@@ -7,15 +7,15 @@ describe('Default Values', () => {
       return name;
     }
 
-    //expect(test("Aaron"))   .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test())          .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test(undefined)) .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test(null))      .toBe(/*ENTER YOUR GUESS HERE*/);
+    //expect(test("Aaron"))   .to.be(/*ENTER YOUR GUESS HERE*/);
+    //expect(test())          .to.be(/*ENTER YOUR GUESS HERE*/);
+    //expect(test(undefined)) .to.be(/*ENTER YOUR GUESS HERE*/);
+    //expect(test(null))      .to.be(/*ENTER YOUR GUESS HERE*/);
 
-    expect(test("Aaron")).toBe("Aaron");
-    expect(test()).toBe("Mercury");
-    expect(test(undefined)).toBe("Mercury");
-    expect(test(null)).toBe(null);
+    expect(test("Aaron")).to.be("Aaron");
+    expect(test()).to.be("Mercury");
+    expect(test(undefined)).to.be("Mercury");
+    expect(test(null)).to.be(null);
   });
 
   it('aren\'t included in arguments', () => {
@@ -24,12 +24,12 @@ describe('Default Values', () => {
       return arguments.length;
     }
 
-    //expect(test("Aaron"))   .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test())          .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test(null))      .toBe(/*ENTER YOUR GUESS HERE*/);
+    //expect(test("Aaron"))   .to.be(/*ENTER YOUR GUESS HERE*/);
+    //expect(test())          .to.be(/*ENTER YOUR GUESS HERE*/);
+    //expect(test(null))      .to.be(/*ENTER YOUR GUESS HERE*/);
 
-    expect(test("Aaron")).toBe(1);
-    expect(test()).toBe(0);
+    expect(test("Aaron")).to.be(1);
+    expect(test()).to.be(0);
   });
 
   it('can trigger a function call', () => {
@@ -44,15 +44,15 @@ describe('Default Values', () => {
       return 'Mercury';
     }
 
-    //expect(test("Aaron"))   .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test())          .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test(null))      .toBe(/*ENTER YOUR GUESS HERE*/);
+    //expect(test("Aaron"))   .to.be(/*ENTER YOUR GUESS HERE*/);
+    //expect(test())          .to.be(/*ENTER YOUR GUESS HERE*/);
+    //expect(test(null))      .to.be(/*ENTER YOUR GUESS HERE*/);
 
-    expect(triggerCount).toBe(0);
-    expect(test("Aaron")).toBe("Aaron");
-    expect(test()).toBe('Mercury');
-    expect(test(undefined)).toBe("Mercury");
-    expect(triggerCount).toBe(2);
+    expect(triggerCount).to.be(0);
+    expect(test("Aaron")).to.be("Aaron");
+    expect(test()).to.be('Mercury');
+    expect(test(undefined)).to.be("Mercury");
+    expect(triggerCount).to.be(2);
   });
 
 });
@@ -65,17 +65,17 @@ describe('Rest Parameters', () => {
       return others;
     }
 
-    //expect(resty().length).toBe(/*ENTER YOUR GUESS HERE */);
-    //expect(resty(1).length).toBe(/*ENTER YOUR GUESS HERE */);
-    //expect(resty(1,2).length).toBe(/*ENTER YOUR GUESS HERE */);
-    //expect(resty(1,2,3).length).toBe(/*ENTER YOUR GUESS HERE */);
-    //expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10).length).toBe(/*ENTER YOUR GUESS HERE */);
+    //expect(resty().length).to.be(/*ENTER YOUR GUESS HERE */);
+    //expect(resty(1).length).to.be(/*ENTER YOUR GUESS HERE */);
+    //expect(resty(1,2).length).to.be(/*ENTER YOUR GUESS HERE */);
+    //expect(resty(1,2,3).length).to.be(/*ENTER YOUR GUESS HERE */);
+    //expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10).length).to.be(/*ENTER YOUR GUESS HERE */);
 
-    expect(resty().length).toBe(0);
-    expect(resty(1).length).toBe(0);
-    expect(resty(1,2).length).toBe(0);
-    expect(resty(1,2,3).length).toBe(1);
-    expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10).length).toBe(8);
+    expect(resty().length).to.be(0);
+    expect(resty(1).length).to.be(0);
+    expect(resty(1,2).length).to.be(0);
+    expect(resty(1,2,3).length).to.be(1);
+    expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10).length).to.be(8);
   });
 
   it('has a different length than `arguments`', () => {
@@ -84,11 +84,11 @@ describe('Rest Parameters', () => {
       return others.length == arguments.length;
     }
 
-    expect(resty()).toBe(true);
-    expect(resty(1)).toBe(false);
-    expect(resty(1,2)).toBe(false);
-    expect(resty(1,2,3)).toBe(false);
-    expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10)).toBe(false);
+    expect(resty()).to.be(true);
+    expect(resty(1)).to.be(false);
+    expect(resty(1,2)).to.be(false);
+    expect(resty(1,2,3)).to.be(false);
+    expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10)).to.be(false);
   });
 
   it('is an actual array, unlike arguments', () => {
@@ -104,12 +104,12 @@ describe('Rest Parameters', () => {
     var args = argy(1,2,3);
     var rests = resty(1,2,3);
 
-    expect(args.__proto__ == rests.__proto__).toBe(false);
-    expect(args.splice).toBeUndefined();
+    expect(args.__proto__ == rests.__proto__).to.be(false);
+    expect(args.splice).to.be(undefined);
 
-    expect(rests.__proto__).toEqual(Array.prototype);
-    expect(rests.splice).toBeDefined();
-    expect(rests.splice).toEqual(Array.prototype.splice);
+    expect(rests.__proto__).to.be(Array.prototype);
+    expect(rests.splice).not.to.be(undefined);
+    expect(rests.splice).to.be(Array.prototype.splice);
   });
 
 
@@ -125,9 +125,9 @@ describe('Rest Parameters', () => {
       //Modify the method signature of `myFunction` to allow for all args to be optional
 
       function myFunction({name="Aaron", age=35, favoriteBand="Queen"}={name: "Aaron", age: 35, favoriteBand:'Queen'}){
-        expect(name).toBeDefined();
-        expect(age).toBeDefined();
-        expect(favoriteBand).toBeDefined();
+        expect(name).not.to.be(undefined);
+        expect(age).not.to.be(undefined);
+        expect(favoriteBand).not.to.be(undefined);
       }
 
       myFunction({ name: 'Axel', age: 37, favoriteBand: 'Taylor Swift' });

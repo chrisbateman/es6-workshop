@@ -1,4 +1,4 @@
-jest.autoMockOff();
+var expect = require('expect.js');
 
 
 describe('LET', () => {
@@ -10,8 +10,8 @@ describe('LET', () => {
     //Declare isBestBand using 'let'
     let isBestBand = true;
 
-    expect(bandName).toBe("Queen");
-    expect(isBestBand).toBe(true);
+    expect(bandName).to.be("Queen");
+    expect(isBestBand).to.be(true);
   });
 
 
@@ -22,7 +22,7 @@ describe('LET', () => {
     //Change value of releaseName to be `ES2015`, the new name for ES6
     releaseName = 'ES2015';
 
-    expect(releaseName).toBe("ES2015");
+    expect(releaseName).to.be("ES2015");
   });
 
 
@@ -33,7 +33,7 @@ describe('LET', () => {
       let b = 1;
     }
 
-    expect(()=> console.log(b)).toThrow(new ReferenceError('b is not defined'));
+    expect(()=> console.log(b)).to.throwError(new ReferenceError('b is not defined'));
   });
 
 
@@ -47,7 +47,7 @@ describe('LET', () => {
       return i;
     }
 
-    expect(doLoop).toThrow(new ReferenceError('i is not defined'));
+    expect(doLoop).to.throwError(new ReferenceError('i is not defined'));
   });
 
 
@@ -59,7 +59,7 @@ describe('LET', () => {
       let d = 2;
     }
 
-    expect(()=> console.log('d',d)).toThrow(new ReferenceError('d is not defined'));
+    expect(()=> console.log('d',d)).to.throwError(new ReferenceError('d is not defined'));
   });
 
 });

@@ -1,4 +1,4 @@
-jest.autoMockOff();
+var expect = require('expect.js');
 
 describe('WEAKMAPS', () => {
 
@@ -9,7 +9,7 @@ describe('WEAKMAPS', () => {
     let myMap = new WeakMap();
     myMap.set(key, value);
 
-    expect(myMap.has(key)).toBe(true);
+    expect(myMap.has(key)).to.be(true);
 
   });
 
