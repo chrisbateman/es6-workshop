@@ -1,4 +1,4 @@
-jest.autoMockOff();
+var expect = require('expect.js');
 
 describe('Arrow Functions', () => {
 
@@ -11,7 +11,7 @@ describe('Arrow Functions', () => {
     //For 'arrowMultiply', set it equal to an arrow function
 
 
-    expect(fnMultiply(5, 5)).toBe(arrowMultiply(5, 5));
+    expect(fnMultiply(5, 5)).to.be(arrowMultiply(5, 5));
 
   });
 
@@ -25,9 +25,9 @@ describe('Arrow Functions', () => {
       return num*num;
     });
 
-    expect(squares.shift()).toBe(4);
-    expect(squares.shift()).toBe(25);
-    expect(squares.shift()).toBe(100);
+    expect(squares.shift()).to.be(4);
+    expect(squares.shift()).to.be(25);
+    expect(squares.shift()).to.be(100);
 
   });
 
@@ -46,7 +46,7 @@ describe('Arrow Functions', () => {
 
     let friendsArray = ['Naomi', 'Jojo', 'Ryan', 'Owen'];
 
-    expect(()=> person.greetFriends(friendsArray)).not.toThrow();
+    expect(() => person.greetFriends(friendsArray)).not.to.throwError();
 
   });
 
@@ -80,8 +80,8 @@ describe('Arrow Functions', () => {
         return d.name;
       });//Pull just the name from each item
 
-    expect(shoppingList.shift()).toBe('Bacon');
-    expect(shoppingList.shift()).toBe('JT Best Hits');
+    expect(shoppingList.shift()).to.be('Bacon');
+    expect(shoppingList.shift()).to.be('JT Best Hits');
 
   });
 

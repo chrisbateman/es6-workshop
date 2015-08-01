@@ -1,4 +1,4 @@
-jest.autoMockOff();
+var expect = require('expect.js');
 
 describe('WEAKMAPS', () => {
 
@@ -10,8 +10,8 @@ describe('WEAKMAPS', () => {
     // Add a new entry. Use key as the key and values as the value
 
 
-    expect(myMap.has(key)).toBe(true);
-    expect(myMap.get(key)).toEqual(value);
+    expect(myMap.has(key)).to.be(true);
+    expect(myMap.get(key)).to.be(value);
 
   });
 

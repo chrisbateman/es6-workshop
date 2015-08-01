@@ -1,4 +1,4 @@
-jest.autoMockOff();
+var expect = require('expect.js');
 
 describe('SETS', () => {
 
@@ -8,10 +8,10 @@ describe('SETS', () => {
     // add the numbers 1, 2, and 3 to the set
 
 
-    expect(mySet.has(1)).toBe(true);
-    expect(mySet.has(2)).toBe(true);
-    expect(mySet.has(3)).toBe(true);
-    expect(mySet.has(4)).toBe(false);
+    expect(mySet.has(1)).to.be(true);
+    expect(mySet.has(2)).to.be(true);
+    expect(mySet.has(3)).to.be(true);
+    expect(mySet.has(4)).to.be(false);
 
   });
 
@@ -23,10 +23,10 @@ describe('SETS', () => {
 
 
 
-    expect(mySet.has(1)).toBe(true);
-    expect(mySet.has(2)).toBe(false);
-    expect(mySet.has(3)).toBe(false);
-    expect(mySet.has(4)).toBe(false);
+    expect(mySet.has(1)).to.be(true);
+    expect(mySet.has(2)).to.be(false);
+    expect(mySet.has(3)).to.be(false);
+    expect(mySet.has(4)).to.be(false);
 
   });
 

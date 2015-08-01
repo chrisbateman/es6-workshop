@@ -1,4 +1,4 @@
-jest.autoMockOff();
+var expect = require('expect.js');
 
 describe('MAPS', () => {
 
@@ -8,7 +8,7 @@ describe('MAPS', () => {
     // add a new entry. Use "name" as the key and "Aaron" as the value
 
 
-    expect(myMap.get("name")).toBe("Aaron");
+    expect(myMap.get("name")).to.be("Aaron");
 
   });
 
@@ -21,8 +21,8 @@ describe('MAPS', () => {
     // add a new entry. Use user as the key, and value as the value
 
 
-    expect(myMap.has(user)).toBe(true);
-    expect(myMap.get(user)).toBe(value);
+    expect(myMap.has(user)).to.be(true);
+    expect(myMap.get(user)).to.be(value);
 
   });
 
