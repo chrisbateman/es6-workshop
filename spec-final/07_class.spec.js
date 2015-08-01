@@ -39,7 +39,7 @@ describe('Classes', () => {
 
   it('can have instance methods', ()=>{
 
-    //Create an Animal class, pass in the name to the constructor, and add a sayName function to the class definition
+    //Create an Animal class, pass in the name to the constructor, and add a sayName function to the class definition as a non-static function
     class Animal{
       constructor(name="Honey Badger"){
         this.name = name;
@@ -61,7 +61,7 @@ describe('Classes', () => {
   it('can have static methods', ()=>{
 
     // Create an Animal class, pass in the name to the constructor,
-    // and add a create method that takes a name and returns an instance
+    // and add a static create method that takes a name and returns an instance
     class Animal{
       constructor(name="Honey Badger"){
         this.name = name;

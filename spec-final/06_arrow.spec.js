@@ -6,6 +6,9 @@ describe('Arrow Functions', () => {
 
     let fnMultiply, arrowMultiply;
 
+    //Write two functions that take two params and return their product
+    //For 'fnMultiply', set it equal to a regular function
+    //For 'arrowMultiply', set it equal to an arrow function
     fnMultiply = function(a, b){
       return a * b;
     };
@@ -19,7 +22,12 @@ describe('Arrow Functions', () => {
   it('can replace traditional functions #2', () => {
 
     let nums = [2, 5, 10];
+
+    //Replace the 'function' in this 'map' call with an arrow function.
+    //Hint: you shouldn't have any braces or 'return' after you are done
     let squares = nums.map((num) => num*num);
+    
+    
 
     expect(squares.shift()).to.be(4);
     expect(squares.shift()).to.be(25);
@@ -28,6 +36,8 @@ describe('Arrow Functions', () => {
   });
 
   it('binds `this` to the eval scope, not the runtime scope', () => {
+
+    //Change the person object. One of the functions should become an arrow to allow for 'this' to retain context correctly
 
     let person = {
       name: 'Aaron',
@@ -57,6 +67,8 @@ describe('Arrow Functions', () => {
       {type: 'CD', name: 'Brittney Best Hits',price: 6.25, qty: 3},
       {type: 'CD', name: 'JT Best Hits',      price: 2.25, qty: 6},
     ];
+
+    //REPLACE ALL REGULAR FUNCTION WITH ARROW FUNCTIONS
 
     let shoppingList = data
       .filter((d) => d.type != 'Widget') //Remove Widgets

@@ -39,7 +39,7 @@ describe('ES6 Modules', () => {
 
   xit('can import from my node_modules', () => {
 
-    //import `lodash`
+    //import `mocha`
     //NOTE: All import statements have to be done at the top of the file
 
     expect(mocha).not.to.be(undefined);

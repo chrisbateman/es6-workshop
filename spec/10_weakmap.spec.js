@@ -7,6 +7,8 @@ describe('WEAKMAPS', () => {
     let value = {twitter: '@js_dev', gplus: '+AaronFrost'};
 
     // Create a new WeakMap called 'myMap'
+    
+    
     // Add a new entry. Use key as the key and values as the value
 
 

@@ -17,9 +17,6 @@ function getNumbers(){
   return [1, 2, 3, 4, 5, 6];
 }
 
-function getNestedNumbers(){
-  return [1, 2, [3, 4, [5, 6]]];
-}
 
 
 describe('Destructuring', () => {
@@ -65,7 +62,7 @@ describe('Destructuring', () => {
 
     it('can destructure nested variables', () => {
 
-      //Using destructuring, call `getAddress()` and create an 'address' variable.
+      //Using destructuring, call `getAddress()` and create an pull out the nested 'lat' and 'long' variables
       let {coords: {lat, long}} = getAddress();
 
       expect(lat).to.be(40.776608);
@@ -90,7 +87,7 @@ describe('Destructuring', () => {
 
     it('can skip indexes in arrays', () =>{
 
-      //Call getNumbers and pull the first value out as `one` and the second as `two`
+      //Call getNumbers and pull the first value out as `one` and the third as `three`. Don't pull out the second index. Skip it
       let [one, ,three] = getNumbers();
 
       expect(one).to.be(1);
@@ -101,7 +98,11 @@ describe('Destructuring', () => {
 
     it('can reach nested arrays', () =>{
 
-      //Call getNestedNumbers and pull the first value out as `one`, the 3 as `three` and 6 as `sixth`.
+      function getNestedNumbers(){
+        return [1, 2, [3, 4, [5, 6]]];
+      }
+
+      //Call getNestedNumbers and pull the 1 out as `one`, the 3 as `three` and 6 as `sixth`.
       let [one, ,[three, ,[ ,six]]] = getNestedNumbers();
 
       expect(one).to.be(1);

@@ -4,8 +4,12 @@ describe('MAPS', () => {
 
   it('has a set method', ()=>{
 
+    // Create a new map called 'myMap'
     let myMap = new Map();
+    
+    // add a new entry. Use "name" as the key and "Aaron" as the value
     myMap.set('name', 'Aaron');
+
 
     expect(myMap.get("name")).to.be("Aaron");
 
@@ -16,7 +20,10 @@ describe('MAPS', () => {
     let user = {name: 'Aaron'};
     let value = {twitter: '@js_dev', gplus: '+AaronFrost'}
 
+    // Create a map called 'myMap'
     let myMap = new Map();
+    
+    // add a new entry. Use user as the key, and value as the value
     myMap.set(user, value);
 
     expect(myMap.has(user)).to.be(true);

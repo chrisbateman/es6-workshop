@@ -20,6 +20,7 @@ describe('ES6 Modules', () => {
   it('Can alias the import name', () => {
 
     //Import `Mathy as myMathy` to ge these tests to pass.
+    //NOTE: All import statements have to be done at the top of the file
 
     expect(myMathy).not.to.be(undefined);
     expect(myMathy.sqrt).to.be(Mathy.sqrt);
@@ -40,6 +41,7 @@ describe('ES6 Modules', () => {
   it('can import from my node_modules', () => {
 
     //import `mocha`
+    //NOTE: All import statements have to be done at the top of the file
 
     expect(mocha).not.to.be(undefined);
 

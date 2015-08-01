@@ -4,15 +4,23 @@ describe('WEAKMAPS', () => {
 
   it('has a set method', ()=>{
     let key = {name: "Aaron"};
-    let value = {twitter: '@js_dev', gplus: '+AaronFrost'}
+    let value = {twitter: '@js_dev', gplus: '+AaronFrost'};
 
+    // Create a new WeakMap called 'myMap'
     let myMap = new WeakMap();
+    
+    // Add a new entry. Use key as the key and values as the value
     myMap.set(key, value);
 
     expect(myMap.has(key)).to.be(true);
+    expect(myMap.get(key)).to.be(value);
 
   });
 
-  //TODO: Should we add a private class data here?
+  xit('EXTRA CREDIT', () => {
+
+    //If you make it this far, write a class with private member variables, using WeakMaps
+
+  })
 
 });

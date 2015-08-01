@@ -17,9 +17,10 @@ describe('LET', () => {
 
   it('can modify the value of a `let` variable', () => {
 
+    //Delcare 'releaseName' using 'let', setting the value to 'ES6'
     let releaseName = "ES6";
 
-    //Change value of releaseName to be `ES2015`, the new name for ES6
+    //Change value of 'releaseName' to be `ES2015`, the new name for ES6
     releaseName = 'ES2015';
 
     expect(releaseName).to.be("ES2015");
@@ -29,7 +30,7 @@ describe('LET', () => {
   it('is trapped inside of an `if` statement', () => {
 
     if(true){
-      //Change to `var` to `let`, so that b is scoped inside of the if-statement
+      //Change to `var` to `let`, so that 'b' is scoped inside of the if-statement
       let b = 1;
     }
 

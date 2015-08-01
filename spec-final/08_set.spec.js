@@ -4,8 +4,8 @@ describe('SETS', () => {
 
   it('has an add method and a has method', ()=>{
 
-    // Create a new Set
-    // add the following numbers to it, using set.add(num): 1, 2, 3
+    // Create a new Set called 'mySet'
+    // add the numbers 1, 2, and 3 to the set
 
     let mySet = new Set();
     mySet.add(1);
@@ -22,8 +22,8 @@ describe('SETS', () => {
 
   it('doesn`t allow duplicates', ()=>{
 
-    // Create a new Set
-    // add the following numbers to it, using set.add(num): 1, 1, 1
+    // Create a new Set called 'mySet'
+    // add the number 1 to it three times
 
     let mySet = new Set();
     mySet.add(1);

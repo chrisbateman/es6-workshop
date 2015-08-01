@@ -12,10 +12,6 @@ describe('Default Values', () => {
     expect(test(null))      .to.be(/*ENTER YOUR GUESS HERE*/);
     expect(test())          .to.be(/*ENTER YOUR GUESS HERE*/);
 
-    expect(test("Aaron")).to.be("Aaron");
-    expect(test()).to.be("Mercury");
-    expect(test(undefined)).to.be("Mercury");
-    expect(test(null)).to.be(null);
   });
 
   xit('aren\'t included in arguments', () => {
@@ -27,9 +23,7 @@ describe('Default Values', () => {
     expect(test("Aaron"))   .to.be(/*ENTER YOUR GUESS HERE*/);
     expect(test(null))      .to.be(/*ENTER YOUR GUESS HERE*/);
     expect(test())          .to.be(/*ENTER YOUR GUESS HERE*/);
-
-    expect(test("Aaron")).to.be(1);
-    expect(test()).to.be(0);
+    
   });
 
   xit('can trigger a function call', () => {
@@ -96,10 +90,9 @@ describe('Rest Parameters', () => {
     var args = argy(1,2,3);
     var rests = resty(1,2,3);
 
-    //
+    
     expect(args.__proto__ == rests.__proto__) .to.be(/*ENTER YOUR GUESS HERE*/);
     expect(args.splice)                       .to.be(/*ENTER YOUR GUESS HERE*/);
-
     expect(rests.__proto__)                   .to.be(/*ENTER YOUR GUESS HERE*/);
     expect(rests.splice)                      .not.to.be(undefined);
     expect(rests.splice)                      .to.be(Array.prototype.splice);
