@@ -18,17 +18,14 @@ By the time that the workshop is over, all of your tests will be passing.
 ###Clone the repo
 You will need to start by cloning this repo. From your terminal, type:
 ```
-git clone https://github.com/aaronfrost/es6-workshop.git && cd es6-workshop
+git clone https://github.com/chrisbateman/es6-workshop.git && cd es6-workshop
 ```
 
 ###Install Dependencies
 Once you have cloned the repo, in need to install the local dependencies. From your terminal, type:
 ```
-npm install --global babel && npm install
+npm install
 ```
-
-*Note that this step will install `Babel` globally. This project uses Babel to provide support for ES6 syntax. Without
-it, we wouldn't be able to use many of these features.*
 
 #How To Run Tests
 Once you have everything installed, you are ready to run some tests. There are two directories with tests in them: `spec` and `spec-final`.
@@ -39,27 +36,13 @@ To run the tests, in your terminal run:
 
 ```javascript
 npm test
+// OR, to automatically run the tests when you save a file:
+npm run test-watch 
 ```
 
-This will execute the tests in the `spec` directory. Currently all of these tests are disabled, because I have changed the `it()` statement
-to `xit()`, which will skip that test. Your jobs it to one-by-one turn each test back on and get the test to pass, by
-writing the required ES6 code. Once you have written the required code, the tests will pass, and you can move onto the next test.
+This will execute the tests in the `spec` directory. Currently all of these tests are disabled, because the `it()` statements have been changed to `xit()`, which will skip that test. Your jobs it to one-by-one turn each test back on and get the test to pass, by writing the required ES6 code. Once you have written the required code, the tests will pass, and you can move onto the next test.
 
-As Axel teaches us about ES6, we will take breaks once in a while to run these exercises.
 
 #Thanks
-If you have any questions, [let me know](https://www.twitter.com/js_dev).
+This repo was [originally](https://github.com/aaronfrost/es6-workshop) created by [Aaron Frost](https://www.twitter.com/js_dev). In this fork, I've switched from Jest to Mocha, since it prints test results in a much nicer format and doesn't include useless stack traces.
 
-If you use this workshop, please Pull Request this readme with a link to your event.
-
-###Events
-[FluentConf 2015 - Axel Rauschmayer & Aaron Frost](http://fluentconf.com/javascript-html-2015/public/schedule/detail/38811)
-Framsieforum 19.05, Finn.no
-
-
-
-
-
-
-
-------
