@@ -29,6 +29,7 @@ describe('Default Values', () => {
     //expect(test())      .to.be(/*ENTER YOUR GUESS HERE*/);
 
     expect(test("Aaron")).to.be(1);
+    expect(test(null)).to.be(1);
     expect(test()).to.be(0);
   });
 
@@ -88,9 +89,9 @@ describe('Rest Parameters', () => {
 
     //expect(resty()).to.be(/*ENTER YOUR GUESS HERE*/);
     //expect(resty(1)).to.be(/*ENTER YOUR GUESS HERE*/);
-    //expect(resty(1,2).length).to.be(/*ENTER YOUR GUESS HERE*/);
-    //expect(resty(1,2,3).length).to.be(/*ENTER YOUR GUESS HERE*/);
-    //expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10).length).to.be(/*ENTER YOUR GUESS HERE*/);
+    //expect(resty(1,2)).to.be(/*ENTER YOUR GUESS HERE*/);
+    //expect(resty(1,2,3)).to.be(/*ENTER YOUR GUESS HERE*/);
+    //expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10)).to.be(/*ENTER YOUR GUESS HERE*/);
     
     expect(resty()).to.be(true);
     expect(resty(1)).to.be(false);
