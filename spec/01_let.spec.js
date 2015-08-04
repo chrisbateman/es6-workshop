@@ -1,4 +1,4 @@
-var expect = require('expect.js');
+var expect = require('chai').expect;
 
 
 describe('LET', () => {
@@ -10,8 +10,8 @@ describe('LET', () => {
     //Declare 'isBestBand' using 'let'
 
 
-    expect(bandName).to.be("Queen");
-    expect(isBestBand).to.be(true);
+    expect(bandName).to.equal("Queen");
+    expect(isBestBand).to.equal(true);
   });
 
 
@@ -22,7 +22,7 @@ describe('LET', () => {
     //Change value of 'releaseName' to be `ES2015`, the new name for ES6
 
 
-    expect(releaseName).to.be("ES2015");
+    expect(releaseName).to.equal("ES2015");
   });
 
 

@@ -1,4 +1,4 @@
-var expect = require('expect.js');
+var expect = require('chai').expect;
 
 describe('Arrow Functions', () => {
 
@@ -15,7 +15,7 @@ describe('Arrow Functions', () => {
 
     arrowMultiply = (a, b) => a * b;
 
-    expect(fnMultiply(5, 5)).to.be(arrowMultiply(5, 5));
+    expect(fnMultiply(5, 5)).to.equal(arrowMultiply(5, 5));
 
   });
 
@@ -29,9 +29,9 @@ describe('Arrow Functions', () => {
     
     
 
-    expect(squares.shift()).to.be(4);
-    expect(squares.shift()).to.be(25);
-    expect(squares.shift()).to.be(100);
+    expect(squares.shift()).to.equal(4);
+    expect(squares.shift()).to.equal(25);
+    expect(squares.shift()).to.equal(100);
 
   });
 
@@ -50,7 +50,7 @@ describe('Arrow Functions', () => {
 
     let friendsArray = ['Naomi', 'Jojo', 'Ryan', 'Owen'];
 
-    expect(() => person.greetFriends(friendsArray)).not.to.throwError();
+    expect(() => person.greetFriends(friendsArray)).not.to.throw();
 
   });
 
@@ -76,8 +76,8 @@ describe('Arrow Functions', () => {
       .sort((d) => d.qty * -1)           //Sort by price, desc
       .map((d) => d.name);               //Pull just the name from each item
 
-    expect(shoppingList.shift()).to.be('Bacon');
-    expect(shoppingList.shift()).to.be('JT Best Hits');
+    expect(shoppingList.shift()).to.equal('Bacon');
+    expect(shoppingList.shift()).to.equal('JT Best Hits');
 
   });
 

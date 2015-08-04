@@ -1,4 +1,4 @@
-var expect = require('expect.js');
+var expect = require('chai').expect;
 
 describe('Classes', () => {
 
@@ -16,8 +16,8 @@ describe('Classes', () => {
     let animal = new Animal();
     let dog = new Animal("Dog");
 
-    expect(animal.name).to.be(undefined);
-    expect(dog.name).to.be('Dog');
+    expect(animal.name).to.equal(undefined);
+    expect(dog.name).to.equal('Dog');
   });
 
   it('constructor can have default param values', ()=>{
@@ -33,8 +33,8 @@ describe('Classes', () => {
     let animal = new Animal();
     let dog = new Animal("Dog");
 
-    expect(animal.name).to.be("Honey Badger");
-    expect(dog.name).to.be('Dog');
+    expect(animal.name).to.equal("Honey Badger");
+    expect(dog.name).to.equal('Dog');
   });
 
   it('can have instance methods', ()=>{
@@ -52,9 +52,9 @@ describe('Classes', () => {
 
     let animal = new Animal();
 
-    expect(animal.sayName).not.to.be(undefined);
-    expect(Animal.sayName).to.be(undefined);
-    expect(animal.sayName()).to.be("My name is: Honey Badger");
+    expect(animal.sayName).not.to.equal(undefined);
+    expect(Animal.sayName).to.equal(undefined);
+    expect(animal.sayName()).to.equal("My name is: Honey Badger");
   });
 
 
@@ -78,11 +78,11 @@ describe('Classes', () => {
 
     let animal = new Animal();
 
-    expect(animal.create).to.be(undefined);
-    expect(Animal.create).not.to.be(undefined);
+    expect(animal.create).to.equal(undefined);
+    expect(Animal.create).not.to.equal(undefined);
 
     let createdAnimal = Animal.create('Snake');
-    expect(createdAnimal.name).to.be('Snake');
+    expect(createdAnimal.name).to.equal('Snake');
   });
 
   it('can extend another class', ()=>{
@@ -109,8 +109,8 @@ describe('Classes', () => {
 
     let dog = new Dog('Fido');
 
-    expect(dog instanceof Dog).to.be(true);
-    expect(dog instanceof Animal).to.be(true);
+    expect(dog instanceof Dog).to.equal(true);
+    expect(dog instanceof Animal).to.equal(true);
   });
 
   it('can use property setters and getters', ()=>{
@@ -132,9 +132,9 @@ describe('Classes', () => {
 
     let animal = new Animal();
     animal.name = "Dog";
-    expect(animal.name).to.be("Dog type of animal");
+    expect(animal.name).to.equal("Dog type of animal");
     animal.name = "Cat";
-    expect(animal.name).to.be("Cat type of animal");
+    expect(animal.name).to.equal("Cat type of animal");
   });
 
 });

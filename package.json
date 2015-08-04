@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "devDependencies": {
     "babel": "^5.8.20",
-    "expect.js": "^0.3.1",
+    "chai": "^3.2.0",
     "mocha": "^2.2.5"
   },
   "scripts": {

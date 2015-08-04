@@ -1,4 +1,4 @@
-var expect = require('expect.js');
+var expect = require('chai').expect;
 
 describe('MAPS', () => {
 
@@ -11,7 +11,7 @@ describe('MAPS', () => {
     myMap.set('name', 'Aaron');
 
 
-    expect(myMap.get("name")).to.be("Aaron");
+    expect(myMap.get("name")).to.equal("Aaron");
 
   });
 
@@ -26,8 +26,8 @@ describe('MAPS', () => {
     // add a new entry. Use user as the key, and value as the value
     myMap.set(user, value);
 
-    expect(myMap.has(user)).to.be(true);
-    expect(myMap.get(user)).to.be(value);
+    expect(myMap.has(user)).to.equal(true);
+    expect(myMap.get(user)).to.equal(value);
 
   });
 
@@ -36,9 +36,9 @@ describe('MAPS', () => {
   //
   //  let myMap = new Map();
   //  myMap.set(1, 'Aaron');
-  //  expect(myMap.get('1')).to.be(false);
+  //  expect(myMap.get('1')).to.equal(false);
   //  myMap.set("1", 'Aaron');
-  //  expect(myMap.get('1')).to.be(true);
+  //  expect(myMap.get('1')).to.equal(true);
   //
   //});
 

@@ -1,4 +1,4 @@
-var expect = require('expect.js');
+var expect = require('chai').expect;
 
 describe('SETS', () => {
 
@@ -8,10 +8,10 @@ describe('SETS', () => {
     // add the numbers 1, 2, and 3 to the set
 
 
-    expect(mySet.has(1)).to.be(true);
-    expect(mySet.has(2)).to.be(true);
-    expect(mySet.has(3)).to.be(true);
-    expect(mySet.has(4)).to.be(false);
+    expect(mySet.has(1)).to.equal(true);
+    expect(mySet.has(2)).to.equal(true);
+    expect(mySet.has(3)).to.equal(true);
+    expect(mySet.has(4)).to.equal(false);
 
   });
 
@@ -23,10 +23,10 @@ describe('SETS', () => {
 
 
 
-    expect(mySet.has(1)).to.be(true);
-    expect(mySet.has(2)).to.be(false);
-    expect(mySet.has(3)).to.be(false);
-    expect(mySet.has(4)).to.be(false);
+    expect(mySet.has(1)).to.equal(true);
+    expect(mySet.has(2)).to.equal(false);
+    expect(mySet.has(3)).to.equal(false);
+    expect(mySet.has(4)).to.equal(false);
 
   });
 

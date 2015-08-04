@@ -1,4 +1,4 @@
-var expect = require('expect.js');
+var expect = require('chai').expect;
 
 describe('WEAKMAPS', () => {
 
@@ -12,8 +12,8 @@ describe('WEAKMAPS', () => {
     // Add a new entry. Use key as the key and values as the value
     myMap.set(key, value);
 
-    expect(myMap.has(key)).to.be(true);
-    expect(myMap.get(key)).to.be(value);
+    expect(myMap.has(key)).to.equal(true);
+    expect(myMap.get(key)).to.equal(value);
 
   });
 

@@ -1,4 +1,4 @@
-var expect = require('expect.js');
+var expect = require('chai').expect;
 
 
 describe('Object Literal', () => {
@@ -21,9 +21,9 @@ describe('Object Literal', () => {
     var godzilla = createMonster("Godzilla", 1000);
     var mechaGodzilla = createMonster("MechaGodzilla", 5000);
 
-    expect(godzilla.name).to.be("Godzilla");
-    expect(godzilla.power).to.be(1000);
-    expect(godzilla.attack(mechaGodzilla)).to.be('Godzilla attacked MechaGodzilla');
+    expect(godzilla.name).to.equal("Godzilla");
+    expect(godzilla.power).to.equal(1000);
+    expect(godzilla.attack(mechaGodzilla)).to.equal('Godzilla attacked MechaGodzilla');
   });
 
 

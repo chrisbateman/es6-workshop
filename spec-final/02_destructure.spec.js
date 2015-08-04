@@ -1,5 +1,5 @@
 
-var expect = require('expect.js');
+var expect = require('chai').expect;
 
 function getAddress(){
   return {
@@ -32,9 +32,9 @@ describe('Destructuring', () => {
       //var zip = address.zip;
       let {city, state, zip} = getAddress();
 
-      expect(city).to.be("Salt Lake City");
-      expect(state).to.be("UT");
-      expect(zip).to.be(84115);
+      expect(city).to.equal("Salt Lake City");
+      expect(state).to.equal("UT");
+      expect(zip).to.equal(84115);
     });
 
 
@@ -43,7 +43,7 @@ describe('Destructuring', () => {
       //Using destructuring, call `getAddress()` and create an 'address' variable.
       let {address} = getAddress();
 
-      expect(address).to.be(undefined);
+      expect(address).to.equal(undefined);
     });
 
     it('can alias destructured variables', () => {
@@ -51,12 +51,12 @@ describe('Destructuring', () => {
       //Using destructuring, call `getAddress()` and pull the city, state and zip out, and alias them to c, s, z, respectively
       let {city:c, state:s, zip:z} = getAddress();
 
-      expect(c).to.be("Salt Lake City");
-      expect(s).to.be("UT");
-      expect(z).to.be(84115);
-      expect( ()=>console.log(city) ).to.throwError();
-      expect( ()=>console.log(state) ).to.throwError();
-      expect( ()=>console.log(zip) ).to.throwError();
+      expect(c).to.equal("Salt Lake City");
+      expect(s).to.equal("UT");
+      expect(z).to.equal(84115);
+      expect( ()=>console.log(city) ).to.throw();
+      expect( ()=>console.log(state) ).to.throw();
+      expect( ()=>console.log(zip) ).to.throw();
 
     });
 
@@ -65,9 +65,9 @@ describe('Destructuring', () => {
       //Using destructuring, call `getAddress()` and create an pull out the nested 'lat' and 'long' variables
       let {coords: {lat, long}} = getAddress();
 
-      expect(lat).to.be(40.776608);
-      expect(long).to.be(-111.920485);
-      expect(()=> console.log(coords)).to.throwError();
+      expect(lat).to.equal(40.776608);
+      expect(long).to.equal(-111.920485);
+      expect(()=> console.log(coords)).to.throw();
 
     });
 
@@ -80,8 +80,8 @@ describe('Destructuring', () => {
       //Call getNumbers and pull the first value out as `one` and the second as `two`
       let [one, two] = getNumbers();
 
-      expect(one).to.be(1);
-      expect(two).to.be(2);
+      expect(one).to.equal(1);
+      expect(two).to.equal(2);
 
     });
 
@@ -90,9 +90,9 @@ describe('Destructuring', () => {
       //Call getNumbers and pull the first value out as `one` and the third as `three`. Don't pull out the second index. Skip it
       let [one, ,three] = getNumbers();
 
-      expect(one).to.be(1);
-      expect(three).to.be(3);
-      expect(()=>console.log(two)).to.throwError();
+      expect(one).to.equal(1);
+      expect(three).to.equal(3);
+      expect(()=>console.log(two)).to.throw();
 
     });
 
@@ -105,9 +105,9 @@ describe('Destructuring', () => {
       //Call getNestedNumbers and pull the 1 out as `one`, the 3 as `three` and 6 as `sixth`.
       let [one, ,[three, ,[ ,six]]] = getNestedNumbers();
 
-      expect(one).to.be(1);
-      expect(three).to.be(3);
-      expect(six).to.be(6);
+      expect(one).to.equal(1);
+      expect(three).to.equal(3);
+      expect(six).to.equal(6);
 
     });
 
