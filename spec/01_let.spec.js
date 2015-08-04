@@ -33,7 +33,7 @@ describe('LET', () => {
       var b = 1;
     }
 
-    expect(()=> console.log(b)).to.throwError(new ReferenceError('b is not defined'));
+    expect(()=> console.log(b)).to.throw('b is not defined');
   });
 
 
@@ -47,7 +47,7 @@ describe('LET', () => {
       return i;
     }
 
-    expect(doLoop).to.throwError(new ReferenceError('i is not defined'));
+    expect(doLoop).to.throw('i is not defined');
   });
 
 
@@ -59,7 +59,7 @@ describe('LET', () => {
       var d = 2;
     }
 
-    expect(()=> console.log('d',d)).to.throwError(new ReferenceError('d is not defined'));
+    expect(()=> console.log('d',d)).to.throw('d is not defined');
   });
 
 });

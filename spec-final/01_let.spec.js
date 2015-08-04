@@ -5,9 +5,9 @@ describe('LET', () => {
 
   it('can be used in place of `var`', () => {
 
-    //Declare bandName using 'let'
+    //Declare 'bandName' using 'let'
     let bandName = "Queen";
-    //Declare isBestBand using 'let'
+    //Declare 'isBestBand' using 'let'
     let isBestBand = true;
 
     expect(bandName).to.equal("Queen");
@@ -38,7 +38,7 @@ describe('LET', () => {
   });
 
 
-  it('can\'t redeclare using the same name', () => {
+  xit('prevents loop counters from hoisting', () => {
 
     function doLoop(){
       //Change loop counter to `let` so that it is trapped inside of the loop, and can't be returned.

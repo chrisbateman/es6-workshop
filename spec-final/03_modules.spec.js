@@ -31,6 +31,7 @@ describe('ES6 Modules', () => {
   it('can destructure the import, to only retain pieces of the import', () => {
 
     //Import `Mathy` again, but pull out only the `sqrt` as mySqrt, and `square` as mySquare
+    //NOTE: All import statements have to be done at the top of the file
 
     expect(mySqrt).not.to.equal(undefined);
     expect(mySquare).not.to.equal(undefined);
