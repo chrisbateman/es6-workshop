@@ -2,11 +2,11 @@ var expect = require('chai').expect;
 
 describe('SETS', () => {
 
-  it('has an add method and a has method', ()=>{
+  xit('has an add method and a has method', ()=>{
 
     // Create a new Set called 'mySet'
     // add the numbers 1, 2, and 3 to the set
-    let mySet = new Set([1,2,3]);
+    
 
     expect(mySet.has(1)).to.equal(true);
     expect(mySet.has(2)).to.equal(true);
