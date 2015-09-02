@@ -61,5 +61,13 @@ describe('LET', () => {
 
     expect(()=> console.log('d',d)).to.throw('d is not defined');
   });
+  
+  xit ('and const too', () => {
+    const a = 'a';
+    
+    //a = 'b';
+    
+    expect(a).to.equal('a');
+  });
 
 });
