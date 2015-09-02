@@ -7,7 +7,7 @@ describe('Template Strings', () => {
        colors: ['red', 'blue']
      };
      
-     // create a template string using the data object above
+     // create this string using the data object above: "There are X colors. The first color is X."
      var string = `There are ${data.colors.length} colors. The first color is ${data.colors[0]}.`;
      
      expect(string).to.equal('There are 2 colors. The first color is red.');
