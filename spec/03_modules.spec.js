@@ -17,7 +17,7 @@ describe('ES6 Modules', () => {
 
   xit('Can alias the import name', () => {
 
-    //Import `Mathy as myMathy` to ge these tests to pass.
+    //Import Mathy as `myMathy` to get these tests to pass.
     //NOTE: All import statements have to be done at the top of the file
 
     expect(myMathy).not.to.equal(undefined);
@@ -28,12 +28,11 @@ describe('ES6 Modules', () => {
 
   xit('can destructure the import, to only retain pieces of the import', () => {
 
-    //Import `Mathy` again, but pull out only the `sqrt` as mySqrt, and `square` as mySquare
+    //Import `sqrt` and `square` from Mathy, but alias `square as mySquare`
     //NOTE: All import statements have to be done at the top of the file
 
-    expect(mySqrt).not.to.equal(undefined);
+    expect(sqrt).to.equal(Mathy.sqrt);
     expect(mySquare).not.to.equal(undefined);
-    expect(mySqrt).to.equal(Mathy.sqrt);
     expect(mySquare).to.equal(Mathy.square);
   });
 
@@ -43,6 +42,5 @@ describe('ES6 Modules', () => {
     //NOTE: All import statements have to be done at the top of the file
 
     expect(mocha).not.to.equal(undefined);
-
   });
 });
